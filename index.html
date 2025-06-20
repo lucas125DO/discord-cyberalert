@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Alerte de Cybersécurité - Discord</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #222;
+      margin: 0;
+      padding: 0;
+    }
+    .header {
+      background-color: #001f3f;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 5px solid #ff4136;
+    }
+    .header img {
+      height: 60px;
+      vertical-align: middle;
+    }
+    .container {
+      padding: 30px;
+      max-width: 800px;
+      margin: auto;
+    }
+    .alert {
+      background-color: #ffe6e6;
+      border: 1px solid #ff4136;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+    .alert h2 {
+      color: #b20000;
+    }
+    .footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 12px;
+      color: #888;
+    }
+    .code {
+      background: #f2f2f2;
+      padding: 10px;
+      border-radius: 5px;
+      font-family: monospace;
+      margin-top: 10px;
+    }
+    .contact-btn {
+      display: inline-block;
+      background-color: #ff4136;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+    .timer {
+      background-color: #ffdddd;
+      color: #a80000;
+      font-weight: bold;
+      padding: 10px;
+      margin-top: 15px;
+      border-radius: 5px;
+      text-align: center;
+      font-size: 18px;
+      border: 1px dashed #a80000;
+    }
+  </style>
+  <script>
+    let seconds = 86400; // 24h en secondes
+    function startCountdown() {
+      const timerElement = document.getElementById("countdown");
+      function updateTimer() {
+        const h = Math.floor(seconds / 3600);
+        const m = Math.floor((seconds % 3600) / 60);
+        const s = seconds % 60;
+        timerElement.textContent = `Temps restant avant suspension définitive du compte : ${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+        if (seconds > 0) {
+          seconds--;
+          setTimeout(updateTimer, 1000);
+        } else {
+          timerElement.textContent = "Délai expiré. Dossier transmis au service de répression.";
+        }
+      }
+      updateTimer();
+    }
+    window.onload = startCountdown;
+  </script>
+</head>
+<body>
+  <div class="header">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Logo_du_Minist%C3%A8re_de_l%27Int%C3%A9rieur_%282020%29.svg/2560px-Logo_du_Minist%C3%A8re_de_l%27Int%C3%A9rieur_%282020%29.svg.png" alt="Logo Police" height="60">
+    <h1>Brigade Nationale de Cybersurveillance - Division Discord</h1>
+  </div>
+  <div class="container">
+    <div class="alert">
+      <h2>Notification Officielle - Enquête en Cours</h2>
+      <div class="timer" id="countdown">Chargement du compte à rebours...</div>
+      <p>
+        Votre compte Discord a été temporairement placé sous surveillance pour suspicion d'infractions aux règles communautaires.
+      </p>
+      <p>
+        Une plainte anonyme a été déposée concernant des propos irrespectueux, insultants ou contraires à la charte de sécurité de Discord.
+      </p>
+      <p class="code">Numéro de dossier : #FR-2987XQ21</p>
+      <p>
+        Si aucune coopération n'est reçue dans les 24h, votre compte Discord, ainsi que vos comptes associés (
+        Amazon Music, PSN, Xbox, TikTok, Steam, Twitch), pourraient être suspendus ou signalés de façon permanente.
+      </p>
+      <p>
+        Merci de prendre contact immédiatement avec l'agent en charge de votre dossier pour régulariser la situation.
+      </p>
+      <p>
+        <strong>Agent Lemoine – D3</strong><br>
+        Cellule de surveillance des réseaux sociaux, Police de la Cybersécurité Française
+      </p>
+      <a class="contact-btn" href="#">Contacter un agent</a>
+    </div>
+  </div>
+  <div class="footer">
+    &copy; 2025 Ministère de l'Intérieur - Brigade Nationale de Cybersurveillance | Discord Monitoring France
+  </div>
+</body>
+</html>
